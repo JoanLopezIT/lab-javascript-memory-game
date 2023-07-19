@@ -45,7 +45,21 @@ window.addEventListener('load', (event) => {
   document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('click', () => {
       // TODO: write some code here
+      addPickedCards(memoryGame.pickedCards.length)
+      backwards()
+      card.className = 'card turned'
       console.log(`Card clicked: ${card}`);
+      console.log(addPickedCards)
     });
   });
+  function addPickedCards(card){
+    memoryGame.pickedCards.push(card)
+  }
+  function backCards(){
+    if(memoryGame.pickedCards.length === 2){
+      card.className='card turned front'
+      memoryGame.pickedCards = []
+    }
+ 
+  }
 });
